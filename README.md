@@ -5,9 +5,9 @@
 
 
 ## Using Llama2-Chat-7B as LLM (Can Update this to larger model if running local on more powerful machine)
-# Check out 'The Bloke' On HuggingFace for other ggmal LLM's
-# Just for simple tasks Llama 2 is already pre-trained on just chat with DAISYCHAT-2
-# For more update date and precise answer content ask DAISYCHAT-2 to google or search a certain topic then produce any type of written content from the data # returned back in JSON form from google (URLS AND TOKENS RETURNED FROM EACH ONE CAN BE EDITIED IN daisy.py file)
+Check out 'The Bloke' On HuggingFace for other ggmal LLM's
+Just for simple tasks Llama 2 is already pre-trained on just chatting with DAISYCHAT-2
+For more updated data and precise answer content ask DAISYCHAT-2 to Google or search for a certain topic then produce any type of written content from the data # returned back in JSON form from google (URLS and token count can be edited in the daisy.py file)
 
 ### To run it: 
 1. Download it and cd into main repo
