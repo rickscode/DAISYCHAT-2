@@ -25,7 +25,7 @@ For more updated data and precise answer content ask DAISYCHAT-2 to Google or se
 13. You can then re-comment out the above imports they only importing once
 14. Enter client chat input 
 
-### These words are intercepted are laid out in the "def process_input" function
+### These words are intercepted by the model for google searching topics in the "def process_input" function
 typing 'search', 'find', 'query', 'google' will trigger the google search return JSON data and DAISYCHAT-2 will interpret and summarize data then ask for more input
 
 ### Example User Imput
