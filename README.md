@@ -10,7 +10,7 @@
 # For more update date and precise answer content ask DAISYCHAT-2 to google or search a certain topic then produce any type of written content from the data # returned back in JSON form from google (URLS AND TOKENS RETURNED FROM EACH ONE CAN BE EDITIED IN daisy.py file)
 
 ### To run it: 
-# 1. Download it and cd into main repo
+1. Download it and cd into main repo
 # 2. activate and run 'python -m venv tutorial-env' then 'source /path/DaisyChat-2/venv/bin/activate' 
 # 3. cd into llama.cpp
 # 4. pip install nltk googlesearch-python trafilatura
