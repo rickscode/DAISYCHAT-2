@@ -11,31 +11,32 @@
 
 ### To run it: 
 1. Download it and cd into main repo
-# 2. activate and run 'python -m venv tutorial-env' then 'source /path/DaisyChat-2/venv/bin/activate' 
-# 3. cd into llama.cpp
-# 4. pip install nltk googlesearch-python trafilatura
-# 4. run command 'python3 daisy.py
-# 5. If you get this error "Resource punkt not found", it's because Punkt sentence tokenizer for Natural Language Toolkit is missing. 
-# 6. Uncomment from nltk.tokenize import word_tokenize
-# 7. it will download the necessary english.pickle:
-# 8. Also uncomment import nltk
-# 9. And nltk.download('punkt')
-# 10. Exit daiy.py with Ctrl+Z
-# 11. Re-run command 'daisy.py
-# 12. You can then re-comment out the above imports they only importing once
-# 5. Enter client chat input 
+2. Activate and run 'python -m venv tutorial-env' then 'source /path/DaisyChat-2/venv/bin/activate' 
+3. cd into llama.cpp
+4. pip install nltk googlesearch-python trafilatura
+5. run command 'python3 daisy.py
+6. If you get this error "Resource punkt not found", it's because Punkt sentence tokenizer for Natural Language Toolkit is missing. 
+7. Uncomment from nltk.tokenize import word_tokenize
+8. It will download the necessary English.pickle:
+9. Also, uncomment import nltk
+10. And nltk.download('punkt')
+11. Exit daiy.py with Ctrl+Z
+12. Re-run command 'daisy.py
+13. You can then re-comment out the above imports they only importing once
+14. Enter client chat input 
 
 ### These words are intercepted are laid out in the "def process_input" function
-# typing 'search', 'find', 'query', 'google' will trigger the google search return JSON data and DAISYCHAT-2 will interpret and summarize data then ask for 
-# more input
+typing 'search', 'find', 'query', 'google' will trigger the google search return JSON data and DAISYCHAT-2 will interpret and summarize data then ask for more input
 
-### Example 
-# Please google coinbase and write my a 500 word review 
+### Example User Imput
 
-# Or Please search best beaches in Thailand, wait for summary from DAISYCHAT-2
-# When asked for your next chat input you can request for DAISYCHAT-2 to use the return data for an marketing email
-# Example: Please generate a maketing emailed titled [ ] to promote the destinations you have learnt about, please include hyperlink entries for booking 
-# flights to each destination
+> Please google coinbase and write my a 500 word review 
+
+> Or Please search best beaches in Thailand, wait for summary from DAISYCHAT-2
+
+When asked for your next chat input you can request for DAISYCHAT-2 to use the return data for an marketing email
+
+Example: Please generate a maketing emailed titled [ ] to promote the destinations you have learnt about, please include hyperlink entries for booking flights to each destination
 
 
 
