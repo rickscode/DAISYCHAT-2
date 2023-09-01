@@ -1,6 +1,9 @@
 ### DAISYCHAT-2
 
 
+![DaisyPR](https://github.com/rickscode/DAISYCHAT-2/assets/71875733/e2db7f69-15eb-4829-99c5-8fdfbeb47acc)
+
+
 ## Using Llama2-Chat-7B as LLM (Can Update this to larger model if running local on more powerful machine)
 # Check out 'The Bloke' On HuggingFace for other ggmal LLM's
 # Just for simple tasks Llama 2 is already pre-trained on just chat with DAISYCHAT-2
