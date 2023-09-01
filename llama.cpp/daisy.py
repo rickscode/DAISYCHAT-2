@@ -1,55 +1,14 @@
-# This script requires to have some basic Python skills 
-# - Install python dependencies (thanks to TitwitMuffbiscuit on reddit) : 
-#  pip install nltk beautifulsoup4 googlesearch-python trafilatura wolframalpha
-#
-#  If you get this error "Resource punkt not found", it's because Punkt sentence tokenizer for Natural Language Toolkit is missing. 
-#  Edit the file and add this before 
-#  from nltk.tokenize import word_tokenize ,
-#  it will download the necessary english.pickle:
-#  import nltk
-#  nltk.download('punkt')
-#  you only need to do it once and remove it afterwards
-#  
-# Used the script with Python 3.11 on venv
-#
-# To run it: 
-# 1. Download it and place it in the llama.cpp folder
-# 2. Get a free wolfram alpha API key from here ( https://developer.wolframalpha.com/portal/myapps/index.html ) (optional)
-# 3. edit the timezone to yours or uncomment the last one and comment the previews one 
-# 4. edit the " llm_command " with your model , add your name etc 
-# 5. Run the python command
-#
-# Keywords that are intercepted are laid out in the "def process_input" function
-# saying 'time' in your conversation will trigger the time 
-# saying 'search', 'find', 'query', 'google' will trigger the google search
-# saying 'question', 'ask','wolfram' will trigger WolframAlpha query
-# saying 'calculate' and your calculation in number form will trigger the calculation and calculate it in python
-
 import json
-import datetime
 from zoneinfo import ZoneInfo
 import subprocess
-from nltk.tokenize import word_tokenize
-import requests
+# from nltk.tokenize import word_tokenize
 from bs4 import BeautifulSoup
 import threading
 from googlesearch import search
 from trafilatura import fetch_url, extract
-# import wolframalpha
 # import nltk
-
-# #add your wolfram API key here 
-# WolframAppKey = "api key here"
-
 # # Download the punkt resource from NLTK
 # nltk.download('punkt')
-
-
-def get_current_time():
-    utc_now = datetime.now(ZoneInfo('UTC'))
-    eest_now = utc_now.astimezone(ZoneInfo('Europe/Athens'))
-    return eest_now.strftime('%I:%M %p EEST')
-    #return datetime.datetime.now().strftime('%I:%M %p')
 
 def calculate_expression(expression):
     try:
@@ -57,12 +16,6 @@ def calculate_expression(expression):
     except Exception as e:
         result = None #str(e)
     return result
-
-# def ask_wolfram(query):
-#     client = wolframalpha.Client(WolframAppKey)  # Replace with your AppID
-#     res = client.query(query)
-#     result = next((r.text for r in res.results if r.text), "No results found")
-#     return json.dumps({"wolfram_result": result})
     
 def google_search(query, num_rslts=5, lang='en'):
     search_results = []
@@ -70,9 +23,8 @@ def google_search(query, num_rslts=5, lang='en'):
         downloaded = fetch_url(result.url)
         if downloaded is not None:
               description = extract(downloaded)
-              # Limit the description to 20 words (the description is the FULL main text from crawling the page) but we limit it. 
-              # You can increase it but it might take time to be processed by your LLM
-              description = ' '.join(description.split()[:50])
+              # Limit the description to n words. 
+              description = ' '.join(description.split()[:200])
               item = {"title": result.title, "link": result.url, "description": description}
               search_results.append(item)
     return search_results
@@ -89,9 +41,9 @@ def process_input(user_input):
     words = word_tokenize(user_input)
 
     for word in words:
-        if word == 'time':
-            response['time'] = get_current_time()
-        elif word in ['search', 'find', 'query', 'google']:
+        # if word == 'time':
+        #     response['time'] = get_current_time()
+        if word in ['search', 'find', 'query', 'google']:
             query = ' '.join(words[words.index(word)+1:])
             response['web_result'] = google_search(query)
         elif word == 'calculate':
@@ -138,7 +90,7 @@ def run_llm():
     while True:
         with ready_for_input:
             ready_for_input.wait()  # Wait for the notification from the output thread
-        user_input = input("Enter your input: ")
+        user_input = input("Enter Input:")
         if user_input.lower() == 'exit':
             llm_process.terminate()
             break
@@ -153,4 +105,4 @@ def run_llm():
 if __name__ == "__main__":
     run_llm()
 
-#### need to -> save outputs , post to word press ####
+#### need to -> save outputs , post to word press, create ui ####
