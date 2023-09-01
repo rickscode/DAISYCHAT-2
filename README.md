@@ -1,4 +1,5 @@
 ### DAISYCHAT-2
+![DAISYCHAT-2](https://github.com/rickscode/DAISYCHAT-2/assets/71875733/c342d7b0-5a2a-4e63-b3a6-fef239f22fa0)
 
 
 https://github.com/rickscode/DAISYCHAT-2/assets/71875733/b76ee5af-0dcc-4857-acf4-de33c6279fd5
