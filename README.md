@@ -1,7 +1,8 @@
 ### DAISYCHAT-2
 
 
-![DaisyPR](https://github.com/rickscode/DAISYCHAT-2/assets/71875733/e2db7f69-15eb-4829-99c5-8fdfbeb47acc)
+https://github.com/rickscode/DAISYCHAT-2/assets/71875733/b76ee5af-0dcc-4857-acf4-de33c6279fd5
+
 
 
 ## Using Llama2-Chat-7B as LLM (Can Update this to larger model if running local on more powerful machine)
